@@ -211,12 +211,14 @@ I am currently focusing on:
 ## Contribution & Stats
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=phanmanhcuongdev&show_icons=true&theme=transparent&hide_border=true&rank_icon=github" alt="GitHub stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=phanmanhcuongdev&layout=compact&theme=transparent&hide_border=true" alt="Top languages" />
+  <a href="https://github.com/phanmanhcuongdev">
+    <img src="https://img.shields.io/badge/GitHub-phanmanhcuongdev-0f172a?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile" />
+  </a>
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=phanmanhcuongdev&theme=transparent&hide_border=true" alt="GitHub streak" />
+  <img src="https://img.shields.io/github/followers/phanmanhcuongdev?style=for-the-badge&logo=github&logoColor=white&label=Followers" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/repos/phanmanhcuongdev?style=for-the-badge&logo=github&logoColor=white&label=Repositories" alt="Repositories" />
 </p>
 
 ## Closing Note
