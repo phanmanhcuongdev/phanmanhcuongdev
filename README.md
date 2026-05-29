@@ -210,15 +210,35 @@ I am currently focusing on:
 
 ## Contribution & Stats
 
+### 📊 On GitHub
+
 <p align="center">
   <a href="https://github.com/phanmanhcuongdev">
-    <img src="https://img.shields.io/badge/GitHub-phanmanhcuongdev-0f172a?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile" />
+    <img src="https://img.shields.io/badge/GitHub%20Profile-phanmanhcuongdev-0f172a?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/followers/phanmanhcuongdev?style=for-the-badge&logo=github&logoColor=white&label=Followers" alt="GitHub Followers" />
-  <img src="https://img.shields.io/github/repos/phanmanhcuongdev?style=for-the-badge&logo=github&logoColor=white&label=Repositories" alt="Repositories" />
+  <img src="https://img.shields.io/github/followers/phanmanhcuongdev?style=for-the-badge&label=Followers&color=1d4ed8&logo=github&logoColor=white" alt="GitHub Followers" />
+  <img src="https://img.shields.io/badge/Total%20Repos-14-475569?style=for-the-badge&logo=github&logoColor=white" alt="Total Repositories" />
+</p>
+
+### 🛠️ Main Technology Languages
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-20%25-EA580C?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/C%23/.NET-18%25-239120?style=flat-square&logo=csharp&logoColor=white" alt="C#" />
+  <img src="https://img.shields.io/badge/Python-15%25-3776ab?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Kotlin-12%25-7F52FF?style=flat-square&logo=kotlin&logoColor=white" alt="Kotlin" />
+  <img src="https://img.shields.io/badge/TypeScript-10%25-3178c6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Other-25%25-666666?style=flat-square" alt="Other" />
+</p>
+
+### 🎯 Key Metrics
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Pinned%20Repos-6-3FA34D?style=for-the-badge&logo=github&logoColor=white" alt="Pinned Repos" />
+  <img src="https://img.shields.io/badge/Public%20Contributions-Active-15803d?style=for-the-badge&logo=github&logoColor=white" alt="Public Contributions" />
 </p>
 
 ## Closing Note
