@@ -1,4 +1,4 @@
-# Everything as Code, from Business Logic to Battle-Tested Infrastructure
+# Everything as Code, from Backend Logic to Operated Infrastructure
 
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=phanmanhcuongdev&label=Profile%20Views&color=0f172a&style=for-the-badge" alt="Profile views" />
@@ -26,50 +26,72 @@
 
 I am **Phan Manh Cuong**, a **3rd-year Information Systems student at PTIT** and a **Backend Intern** working across **.NET** and **Java**.
 
-I do not see software as isolated source code. I see it as a living system that must be designed, deployed, secured, observed, and continuously improved. My core philosophy is simple:
+I do not see software as isolated source code. I see it as a system that has to be designed, deployed, secured, observed, recovered, and improved over time.
 
-> **Not just writing code, but mastering the entire lifecycle of a system.**
+My direction is clear:
 
-That is why my path is not limited to backend development. I am intentionally growing from backend engineering toward **DevSecOps**, with a strong focus on infrastructure ownership, automation, and security-first thinking.
+> **From backend development to DevSecOps — not by theory alone, but by operating real systems.**
 
-Outside engineering, I am also a **regular apheresis donor**. That long-term discipline shapes how I work: steady under pressure, consistent in execution, and committed to creating value that lasts.
+I care about what happens after the code leaves the IDE: how services are deployed, how traffic reaches them, how logs and metrics expose problems, how failures are recovered, and how security decisions are built into the system from the beginning.
 
-## The Mindset
+Outside engineering, I am also a **regular apheresis donor**. That long-term habit shapes the way I work: steady, consistent, and committed to building value that lasts.
 
-Many developers stop at making features work.
+## What I Actually Operate
 
-I want to understand what happens **before**, **around**, and **after** the code runs:
+My homelab is my personal engineering ground. It is not only a collection of machines, but a small environment where I practice infrastructure, networking, observability, and security under real constraints.
 
-- How the request is routed.
-- How packets move through **Layer 2 / Layer 3**.
-- How services are isolated, exposed, logged, and recovered.
-- How infrastructure decisions affect reliability, performance, and security.
+### Core Infrastructure
 
-That is the difference I care about: moving from a developer who can ship application logic to an engineer who can reason about the full system, from API entrypoint to network boundary.
+My homelab runs on a **Dual Xeon E5-2676 v3 platform (24 Cores / 48 Threads)** with 64GB RAM and a GTX 1050Ti, combining both physical networking gear and hypervisor infrastructure. This environment provides realistic conditions to build, break, and secure systems from Layer 2 up to the application layer.
 
-## The Proving Ground
+The environment includes:
 
-My homelab is not a side project. It is my **cyber range** and engineering laboratory.
+* **Hybrid Networking & Routing:** Operating physical switches and routers (Cisco, Mikrotik RB450G, RB2011) alongside virtualized **VyOS** instances for deep packet routing, VLAN segmentation, and firewalling.
+* **Secure Access & Overlay Networks:** Managing a self-hosted VPN mesh network using **Headscale & Tailscale** (with custom domain routing via `headscale.cuongdso.id.vn`) and enforcing strict **VPN ACLs** for zero-trust access control.
+* **Proxmox Virtualization:** Orchestrating multiple VMs and LXC containers (Ubuntu Server, Kali Linux) for strict service isolation, security testing, and self-hosted workflows (RabbitMQ, MinIO, Ollama for local AI).
+* **Full-Stack Observability:** Instrumenting the entire infrastructure with **Prometheus, InfluxDB, Loki, and Grafana** to capture metrics, aggregate logs, and monitor system health in real-time.
 
-It runs on a **Dual Xeon 48-core platform**: not a datacenter cluster, but more than enough to build serious hands-on experience with virtualization, networking, automation, and system hardening under realistic conditions.
+This is where theory becomes operational skill, debugging deep into how packets travel and how systems recover.
 
-Inside the lab, I practice:
+## Engineering Mindset
 
-- **Proxmox Virtualization** for multi-node experiments and service isolation.
-- **VyOS Networking** for routing, segmentation, firewalling, and traffic control.
-- **Linux and Windows Server hardening** to reduce attack surface and enforce safer defaults.
-- **Self-hosted workflows** to understand how systems behave beyond the IDE.
+Many developers stop when the feature works.
 
-This is where theory becomes operational skill.
+I want to understand the full path around that feature:
 
-## 🏆 Featured Work
+* How the request enters the system.
+* How traffic moves across Layer 2 and Layer 3.
+* How services are isolated and exposed.
+* How logs, metrics, and alerts help during failure.
+* How access is controlled.
+* How recovery works when SSH, VPN, or routing breaks.
+* How documentation prevents the system from becoming tribal knowledge.
 
-| Project | What it represents |
+That is the kind of engineering I am building toward: backend logic with infrastructure awareness, security thinking, and operational maturity.
+
+## Operational Lessons I Care About
+
+My homelab has taught me that infrastructure is not only about tools. It is about discipline.
+
+Some principles I try to follow:
+
+* **Always keep a recovery path.** VPN, SSH, and reverse proxy are useful, but console access can save the system when networking fails.
+* **Expose less by default.** Private mesh access is often better than public exposure.
+* **Monitor for understanding, not decoration.** Dashboards should help explain system behavior during incidents.
+* **Document the network.** If the topology only exists in your head, it will eventually become a problem.
+* **Treat security as part of design.** Hardening, access control, and logs should not be added only at the end.
+* **Respect physical constraints.** Power, heat, and cost are also architecture concerns.
+
+## Featured Work
+
+| Project / System | What it represents |
 | --- | --- |
-| [**roadmap-to-devsecops**](https://github.com/phanmanhcuongdev/roadmap-to-devsecops) | My personalized learning journey, homelab notes, and system hardening guides as I move from backend into DevSecOps. |
-| [**student-feedback-system**](https://github.com/phanmanhcuongdev/student-feedback-system) | An enterprise-style backend project built with **.NET/Java architecture thinking**, focused on maintainability, clean boundaries, and real-world backend design. |
-
-**Related build in progress:** [translation-ai-worker](https://github.com/phanmanhcuongdev/translation-ai-worker) is being developed as a supporting backend worker service for the broader ecosystem around `student-feedback-system`.
+| [**roadmap-to-devsecops**](https://github.com/phanmanhcuongdev/roadmap-to-devsecops) | My personalized learning journey, homelab notes, and system hardening guides as I move from backend toward DevSecOps. Structured phases covering Infrastructure as Code, Kubernetes orchestration, security in CI/CD pipelines, and observability maturity. |
+| [**student-feedback-system**](https://github.com/phanmanhcuongdev/student-feedback-system) | An enterprise-style academic project: Java 21 + Spring Boot 4 backend with Hexagonal Architecture, React 19 frontend, Microsoft SQL Server, Flyway migrations, JWT auth, email verification (Resend), MinIO document storage, WebSocket notifications, audit logging, and PDF/XLSX reporting via BIRT. |
+| [**translation-ai-worker**](https://github.com/phanmanhcuongdev/translation-ai-worker) | A backend worker service consuming RabbitMQ translation requests, generating bilingual (Vietnamese/English) content for survey feedback workflows. Integrated with the student feedback system. |
+| **Homelab Mesh Infrastructure** | A private network environment using Headscale/Tailscale, Proxmox, VyOS, Prometheus/Grafana stack, and security layers including network segmentation and access control. |
+| [**FaizGear**](https://github.com/phanmanhcuongdev/FaizGear) | A Faiz Phone (Kamen Rider 555) simulator built with Jetpack Compose. Acts as a Zero-Trust IoT remote controller for Proxmox homelab via Tailscale API, featuring authentic UI, gapless audio sequences, and haptic feedback. |
+| [**headscale-infra**](https://github.com/phanmanhcuongdev/headscale-infra) | Documentation and configuration for self-hosted Headscale + Nginx overlay network infrastructure. Includes architecture, deployment flow, debugging reports, and troubleshooting guides. |
 
 ## Tech Stack
 
@@ -85,75 +107,106 @@ This is where theory becomes operational skill.
   <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />
 </p>
 
-### Containers, Automation & Delivery
+### Infrastructure, Networking & Operations
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Proxmox-E57000?style=for-the-badge&logo=proxmox&logoColor=white" alt="Proxmox" />
+  <img src="https://img.shields.io/badge/VyOS-1E293B?style=for-the-badge" alt="VyOS" />
+  <img src="https://img.shields.io/badge/Ubuntu%20Server-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu Server" />
+  <img src="https://img.shields.io/badge/Windows%20Server-2563EB?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Server" />
+  <img src="https://img.shields.io/badge/Tailscale-0F172A?style=for-the-badge&logo=tailscale&logoColor=white" alt="Tailscale" />
+  <img src="https://img.shields.io/badge/Headscale-1F2937?style=for-the-badge&logo=tailscale&logoColor=white" alt="Headscale" />
+  <img src="https://img.shields.io/badge/NetBox-2563EB?style=for-the-badge" alt="NetBox" />
+</p>
+
+### Networking & Security Infrastructure
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Cisco-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white" alt="Cisco" />
+  <img src="https://img.shields.io/badge/MikroTik-282A36?style=for-the-badge&logo=mikrotik&logoColor=white" alt="MikroTik" />
+  <img src="https://img.shields.io/badge/VyOS-1E293B?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="VyOS" />
+  <img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard" />
+  <img src="https://img.shields.io/badge/Tailscale-0F172A?style=for-the-badge&logo=tailscale&logoColor=white" alt="Tailscale" />
+  <img src="https://img.shields.io/badge/Headscale-1F2937?style=for-the-badge&logo=tailscale&logoColor=white" alt="Headscale" />
+  <img src="https://img.shields.io/badge/Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali Linux" />
+</p>
+
+### Containers, Delivery & Observability
 
 <p align="left">
   <img src="https://img.shields.io/badge/Docker-0EA5E9?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
   <img src="https://img.shields.io/badge/Portainer-13BEF9?style=for-the-badge&logo=portainer&logoColor=white" alt="Portainer" />
   <img src="https://img.shields.io/badge/MinIO-C72E49?style=for-the-badge&logo=minio&logoColor=white" alt="MinIO" />
   <img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white" alt="Ansible" />
-  <img src="https://img.shields.io/badge/CI%2FCD-0F172A?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI/CD" />
+  <img src="https://img.shields.io/badge/GitHub%20Actions-0F172A?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus" />
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana" />
+  <img src="https://img.shields.io/badge/Loki-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Loki" />
 </p>
 
-### Operating Systems & Tools
+### Observability & Data
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Proxmox-E57000?style=for-the-badge&logo=proxmox&logoColor=white" alt="Proxmox" />
-  <img src="https://img.shields.io/badge/VyOS-1E293B?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="VyOS" />
-  <img src="https://img.shields.io/badge/Ubuntu%20Server-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu Server" />
-  <img src="https://img.shields.io/badge/Windows%20Server-2563EB?style=for-the-badge&logo=windowsserver&logoColor=white" alt="Windows Server" />
-  <img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard" />
-  <img src="https://img.shields.io/badge/Tailscale-0F172A?style=for-the-badge&logo=tailscale&logoColor=white" alt="Tailscale" />
-  <img src="https://img.shields.io/badge/Headscale-1F2937?style=for-the-badge&logo=tailscale&logoColor=white" alt="Headscale" />
-  <img src="https://img.shields.io/badge/Linux-111827?style=for-the-badge&logo=linux&logoColor=FCC624" alt="Linux" />
+  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus" />
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana" />
+  <img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=influxdb&logoColor=white" alt="InfluxDB" />
+  <img src="https://img.shields.io/badge/Loki-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Loki" />
+  <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
 </p>
-
-My stack is shaped by one priority: build backend systems that are not only functional in development, but also understandable, operable, and defensible in real environments.
 
 ## Engineering Map
 
 ```mermaid
 flowchart LR
-    A[Phan Manh Cuong]
-    B[Backend Engineering]
-    C[System Engineering]
-    D[Security Thinking]
-    E[Homelab Cyber Range]
-    F[DevSecOps Roadmap]
+    A[Backend Engineering]
+    B[Infrastructure]
+    C[Networking]
+    D[Security]
+    E[Observability]
+    F[Homelab Cyber Range]
+    G[DevSecOps Direction]
 
-    A --> B
-    A --> C
-    A --> D
+    A --> F
+    B --> F
+    C --> F
+    D --> F
+    E --> F
+    F --> G
+
+    A <--> B
     B <--> C
     C <--> D
-    B --> E
-    C --> E
-    D --> E
-    E --> F
+    D <--> E
+    E <--> A
 
-    style A fill:#dbeafe,stroke:#1d4ed8,stroke-width:2px,color:#0f172a
-    style E fill:#dcfce7,stroke:#15803d,stroke-width:2px,color:#0f172a
-    style F fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#0f172a
+    style F fill:#dcfce7,stroke:#15803d,stroke-width:2px,color:#0f172a
+    style G fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#0f172a
+    style A fill:#dbeafe,stroke:#1d4ed8,color:#0f172a
     style B fill:#f8fafc,stroke:#475569,color:#0f172a
     style C fill:#f8fafc,stroke:#475569,color:#0f172a
     style D fill:#f8fafc,stroke:#475569,color:#0f172a
+    style E fill:#f8fafc,stroke:#475569,color:#0f172a
 ```
 
-## The Journey
+## Current Direction
 
-My roadmap is structured in stages, each one adding a deeper layer of control over the system:
+I am currently focusing on:
 
-1. **Infrastructure as Code**  
-   Standardize provisioning, reduce manual drift, and make environments reproducible.
+1. **Backend architecture**
+   Building maintainable services with clear boundaries, practical API design, and database-aware thinking. Currently implementing enterprise patterns: Hexagonal Architecture, Ports & Adapters, JWT auth, Flyway migrations, transactional consistency.
 
-2. **Kubernetes & Orchestration**  
-   Move from container usage to orchestrated, production-minded service management.
+2. **Infrastructure as Code**
+   Reducing manual drift and making environments reproducible. Exploring OpenTofu and Ansible for infrastructure provisioning, and Kubernetes orchestration with K3s for production-mindedness.
 
-3. **Security in the Pipeline**  
-   Integrate scanning, policy thinking, and secure delivery practices into CI/CD.
+3. **Private networking and secure access**
+   Using mesh VPN patterns (Headscale, Tailscale) and network segmentation to reduce unnecessary public exposure. Implementing zero-trust principles and strict VPN ACLs.
 
-4. **Observability & Operational Maturity**  
-   Build visibility through logs, metrics, tracing, and incident-aware system design.
+4. **CI/CD and security in delivery**
+   Moving security checks closer to the development workflow instead of treating them as a final gate. Exploring SonarQube, Trivy scanning, and container image validation.
+
+5. **Observability and incident readiness**
+   Building systems that can explain themselves when something goes wrong. Instrumenting with Prometheus, Grafana, Loki for metrics, logs, and visibility. Creating operational dashboards for understanding system behavior during failure.
 
 ## Contribution & Stats
 
@@ -168,10 +221,8 @@ My roadmap is structured in stages, each one adding a deeper layer of control ov
 
 ## Closing Note
 
-I am building toward a version of engineering where backend, infrastructure, and security are not separate tracks.
+I am building toward a version of engineering where backend, infrastructure, networking, observability, and security are not separate tracks.
 
 They are one system.
-
-If you are interested in backend architecture, homelab engineering, infrastructure automation, or the road from **Backend Intern** to **DevSecOps Engineer**, we are probably building in the same direction.
 
 > "Security is not a gate at the end. It is a property of systems designed with discipline from the start."
