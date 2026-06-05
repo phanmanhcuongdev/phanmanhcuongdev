@@ -32,7 +32,7 @@ My direction is clear:
 
 > **From backend development to DevSecOps — not by theory alone, but by operating real systems.**
 
-I care about what happens after the code leaves the IDE: how services are deployed, how traffic reaches them, how logs and metrics expose problems, how failures are recovered, and how security decisions are built into the system from the beginning.
+I care about what happens after the code leaves the IDE: how services are deployed, how traffic reaches them, how logs and metrics expose problems, how failures are recovered, and how security decisions shape the entire architecture.
 
 Outside engineering, I am also a **regular apheresis donor**. That long-term habit shapes the way I work: steady, consistent, and committed to building value that lasts.
 
@@ -42,13 +42,13 @@ My homelab is my personal engineering ground. It is not only a collection of mac
 
 ### Core Infrastructure
 
-My homelab runs on a **Dual Xeon E5-2676 v3 platform (24 Cores / 48 Threads)** with 64GB RAM and a GTX 1050Ti, combining both physical networking gear and hypervisor infrastructure. This environment provides realistic conditions to build, break, and secure systems from Layer 2 up to the application layer.
+My homelab runs on a **Dual Xeon E5-2676 v3 platform (24 Cores / 48 Threads)** with 64GB RAM and a GTX 1050Ti, combining both physical networking gear and hypervisor infrastructure. This environment is where I test real problems before bringing solutions to production mindsets.
 
 The environment includes:
 
-* **Hybrid Networking & Routing:** Operating physical switches and routers (Cisco, Mikrotik RB450G, RB2011) alongside virtualized **VyOS** instances for deep packet routing, VLAN segmentation, and firewalling.
-* **Secure Access & Overlay Networks:** Managing a self-hosted VPN mesh network using **Headscale & Tailscale** (with custom domain routing via `headscale.cuongdso.id.vn`) and enforcing strict **VPN ACLs** for zero-trust access control.
-* **Proxmox Virtualization:** Orchestrating multiple VMs and LXC containers (Ubuntu Server, Kali Linux) for strict service isolation, security testing, and self-hosted workflows (RabbitMQ, MinIO, Ollama for local AI).
+* **Hybrid Networking & Routing:** Operating physical switches and routers (Cisco, Mikrotik RB450G, RB2011) alongside virtualized **VyOS** instances for deep packet routing, VLAN segmentation, and access control.
+* **Secure Access & Overlay Networks:** Managing a self-hosted VPN mesh network using **Headscale & Tailscale** (with custom domain routing via `headscale.cuongdso.id.vn`) and enforcing strict **WireGuard** policies across device cohorts.
+* **Proxmox Virtualization:** Orchestrating multiple VMs and LXC containers (Ubuntu Server, Kali Linux) for strict service isolation, security testing, and self-hosted workflows (RabbitMQ, MinIO, databases).
 * **Full-Stack Observability:** Instrumenting the entire infrastructure with **Prometheus, InfluxDB, Loki, and Grafana** to capture metrics, aggregate logs, and monitor system health in real-time.
 
 This is where theory becomes operational skill, debugging deep into how packets travel and how systems recover.
@@ -86,12 +86,16 @@ Some principles I try to follow:
 
 | Project / System | What it represents |
 | --- | --- |
-| [**roadmap-to-devsecops**](https://github.com/phanmanhcuongdev/roadmap-to-devsecops) | My personalized learning journey, homelab notes, and system hardening guides as I move from backend toward DevSecOps. Structured phases covering Infrastructure as Code, Kubernetes orchestration, security in CI/CD pipelines, and observability maturity. |
-| [**student-feedback-system**](https://github.com/phanmanhcuongdev/student-feedback-system) | An enterprise-style academic project: Java 21 + Spring Boot 4 backend with Hexagonal Architecture, React 19 frontend, Microsoft SQL Server, Flyway migrations, JWT auth, email verification (Resend), MinIO document storage, WebSocket notifications, audit logging, and PDF/XLSX reporting via BIRT. |
-| [**translation-ai-worker**](https://github.com/phanmanhcuongdev/translation-ai-worker) | A backend worker service consuming RabbitMQ translation requests, generating bilingual (Vietnamese/English) content for survey feedback workflows. Integrated with the student feedback system. |
-| **Homelab Mesh Infrastructure** | A private network environment using Headscale/Tailscale, Proxmox, VyOS, Prometheus/Grafana stack, and security layers including network segmentation and access control. |
-| [**FaizGear**](https://github.com/phanmanhcuongdev/FaizGear) | A Faiz Phone (Kamen Rider 555) simulator built with Jetpack Compose. Acts as a Zero-Trust IoT remote controller for Proxmox homelab via Tailscale API, featuring authentic UI, gapless audio sequences, and haptic feedback. |
-| [**headscale-infra**](https://github.com/phanmanhcuongdev/headscale-infra) | Documentation and configuration for self-hosted Headscale + Nginx overlay network infrastructure. Includes architecture, deployment flow, debugging reports, and troubleshooting guides. |
+| [**CoreAuth**](https://github.com/phanmanhcuongdev/CoreAuth) | 🔐 **NEW** Android FIDO2/U2F Security Key framework (Rust daemon + Kotlin/Compose UI). Implements Legacy U2F over USB HID with transactional lifecycle, independent biometric modes (Fingerprint, Face, NFC), and zero-trust protocol isolation. Security Key does not invoke Android BiometricPrompt—it's a hardware-grade authenticator in your pocket. |
+| [**roadmap-to-devsecops**](https://github.com/phanmanhcuongdev/roadmap-to-devsecops) | My personalized learning journey, homelab notes, and system hardening guides as I move from backend toward DevSecOps. Evidence-based labs with formal methodology for each phase. |
+| [**student-feedback-system**](https://github.com/phanmanhcuongdev/student-feedback-system) | An enterprise-style academic project: Java 21 + Spring Boot 4 backend with Hexagonal Architecture, Reactor async patterns, and modular API design—how backend architecture should feel at scale. |
+| [**translation-ai-worker**](https://github.com/phanmanhcuongdev/translation-ai-worker) | A backend worker service consuming RabbitMQ translation requests, generating bilingual (Vietnamese/English) content using FastAPI, and demonstrating async patterns in a real-world integration. |
+| [**FaizGear**](https://github.com/phanmanhcuongdev/FaizGear) | 🤖 **NEW** A Faiz Phone (Kamen Rider 555) simulator built with **Jetpack Compose** and Kotlin. Acts as a Zero-Trust IoT remote controller for Proxmox homelab—blending mobile UI, hardware control, and security in one experimental package. |
+| **Homelab Mesh Infrastructure** | A private network environment using Headscale/Tailscale, Proxmox, VyOS, Prometheus/Grafana stack, and security layers including network segmentation and access control. The operational ground where backend meets infrastructure. |
+| [**headscale-infra**](https://github.com/phanmanhcuongdev/headscale-infra) | Documentation and configuration for self-hosted Headscale + Nginx overlay network infrastructure. Includes architecture decisions, failure recovery, and real-world ConfigFS/UDC management. |
+| [**distributed-systems-lab**](https://github.com/phanmanhcuongdev/distributed-systems-lab) | SQL Server replication lab combining Publisher–Distributor–Subscriber topology with Headscale mesh networking for geographic distribution testing. |
+| [**sqlserver-replication-lab**](https://github.com/phanmanhcuongdev/sqlserver-replication-lab) | Docker Compose setup for SQL Server replication testing—how data moves, where it breaks, and how to recover. |
+| [**IOT-v-ng-d-ng**](https://github.com/phanmanhcuongdev/IOT-v-ng-d-ng) | IoT / embedded systems experimentation ground—extending the security-key and device-controller paradigm into real-world hardware challenges. |
 
 ## Tech Stack
 
@@ -105,6 +109,15 @@ Some principles I try to follow:
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/REST%20API-0F172A?style=for-the-badge&logo=swagger&logoColor=white" alt="REST API" />
   <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />
+</p>
+
+### Mobile & Systems Programming
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
+  <img src="https://img.shields.io/badge/Jetpack%20Compose-3FA34D?style=for-the-badge&logo=android&logoColor=white" alt="Jetpack Compose" />
+  <img src="https://img.shields.io/badge/Rust-CE422B?style=for-the-badge&logo=rust&logoColor=white" alt="Rust" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
 </p>
 
 ### Infrastructure, Networking & Operations
@@ -194,7 +207,7 @@ flowchart LR
 I am currently focusing on:
 
 1. **Backend architecture**
-   Building maintainable services with clear boundaries, practical API design, and database-aware thinking. Currently implementing enterprise patterns: Hexagonal Architecture, Ports & Adapters, JWT auth, Flyway migrations, transactional consistency.
+   Building maintainable services with clear boundaries, practical API design, and database-aware thinking. Currently implementing enterprise patterns: Hexagonal Architecture, Ports & Adapters, JWT/OAuth flows, and async message processing.
 
 2. **Infrastructure as Code**
    Reducing manual drift and making environments reproducible. Exploring OpenTofu and Ansible for infrastructure provisioning, and Kubernetes orchestration with K3s for production-mindedness.
@@ -206,7 +219,10 @@ I am currently focusing on:
    Moving security checks closer to the development workflow instead of treating them as a final gate. Exploring SonarQube, Trivy scanning, and container image validation.
 
 5. **Observability and incident readiness**
-   Building systems that can explain themselves when something goes wrong. Instrumenting with Prometheus, Grafana, Loki for metrics, logs, and visibility. Creating operational dashboards for understanding system behavior during failure.
+   Building systems that can explain themselves when something goes wrong. Instrumenting with Prometheus, Grafana, Loki for metrics, logs, and visibility. Creating operational dashboards for understanding system behavior during failures.
+
+6. **Security-first system design**
+   Recently diving into FIDO2/U2F protocol implementation (**CoreAuth**), understanding hardware-grade authentication, and exploring how security decisions cascade through architecture—from daemon privilege boundaries to USB gadget lifecycle management.
 
 ## Contribution & Stats
 
@@ -220,7 +236,7 @@ I am currently focusing on:
 
 <p align="center">
   <img src="https://img.shields.io/github/followers/phanmanhcuongdev?style=for-the-badge&label=Followers&color=1d4ed8&logo=github&logoColor=white" alt="GitHub Followers" />
-  <img src="https://img.shields.io/badge/Total%20Repos-14-475569?style=for-the-badge&logo=github&logoColor=white" alt="Total Repositories" />
+  <img src="https://img.shields.io/badge/Total%20Repos-14+-475569?style=for-the-badge&logo=github&logoColor=white" alt="Total Repositories" />
 </p>
 
 ### 🛠️ Main Technology Languages
@@ -230,8 +246,9 @@ I am currently focusing on:
   <img src="https://img.shields.io/badge/C%23/.NET-18%25-239120?style=flat-square&logo=csharp&logoColor=white" alt="C#" />
   <img src="https://img.shields.io/badge/Python-15%25-3776ab?style=flat-square&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/Kotlin-12%25-7F52FF?style=flat-square&logo=kotlin&logoColor=white" alt="Kotlin" />
-  <img src="https://img.shields.io/badge/TypeScript-10%25-3178c6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Other-25%25-666666?style=flat-square" alt="Other" />
+  <img src="https://img.shields.io/badge/Rust-8%25-CE422B?style=flat-square&logo=rust&logoColor=white" alt="Rust" />
+  <img src="https://img.shields.io/badge/TypeScript-7%25-3178c6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Other-20%25-666666?style=flat-square" alt="Other" />
 </p>
 
 ### 🎯 Key Metrics
